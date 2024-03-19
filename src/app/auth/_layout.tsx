@@ -1,12 +1,17 @@
-import { Stack } from "expo-router";
-import React from "react";
+import { Redirect, Stack } from "expo-router";
+import React, { useState } from "react";
 
-const AuthLayout = () => {
+export default function AuthLayout() {
+  const [signedIn, setSignedIn] = useState(false);
+
+  if (signedIn) {
+    return <Redirect href="/" />;
+  }
+
   return (
-    <Stack>
+    <Stack initialRouteName="sign-in" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="sign-in"></Stack.Screen>
+      <Stack.Screen name="sign-up"></Stack.Screen>
     </Stack>
   );
-};
-
-export default AuthLayout;
+}

@@ -1,12 +1,6 @@
-import { Stack } from "expo-router";
-import React from "react";
+import { Slot, Stack, router } from "expo-router";
+import React, { useState } from "react";
 
-const AppLayout = () => {
-  return (
-    <Stack>
-      <Stack.Screen name="auth"></Stack.Screen>
-    </Stack>
-  );
-};
-
-export default AppLayout;
+export default function RootLayout() {
+  return <Slot />;
+}
