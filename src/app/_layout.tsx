@@ -1,5 +1,5 @@
-import { Slot, Stack, router } from "expo-router";
-import React, { useState } from "react";
+import { Slot } from "expo-router";
+import React from "react";
 
 export default function RootLayout() {
   return <Slot />;
