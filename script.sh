@@ -1,0 +1,1 @@
+ngrok http --domain amoeba-glorious-polecat.ngrok-free.app 5043
