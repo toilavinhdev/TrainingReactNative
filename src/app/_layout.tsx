@@ -1,6 +1,6 @@
 import { Slot } from "expo-router";
 import React from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
@@ -9,18 +9,17 @@ import {
 // Root Layout
 export default function AppLayout() {
   const insets = useSafeAreaInsets();
+  const containerStyle = {
+    flex: 1,
+    paddingTop: insets.top,
+    paddingBottom: insets.bottom,
+    paddingLeft: insets.left,
+    paddingRight: insets.right,
+  };
 
   return (
     <SafeAreaProvider>
-      <View
-        style={{
-          flex: 1,
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        }}
-      >
+      <View style={containerStyle}>
         <Slot />
       </View>
     </SafeAreaProvider>
