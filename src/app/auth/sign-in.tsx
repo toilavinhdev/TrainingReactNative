@@ -1,12 +1,13 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import React, { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 
 const onSignIn = (email: string, password: string) => {
+  const api = `${process.env.EXPO_PUBLIC_API_URL}/api/v1/user/sign-in`;
   axios
-    .get("https://fakestoreapi.com/products/1")
+    .post(api, { email, password })
     .then((val) => console.log(email, password, val.data))
-    .catch((err) => console.log(err));
+    .catch((err: AxiosError) => console.log(api, err.response?.data));
 };
 
 export default function SignInScreen() {

@@ -1,1 +1,1 @@
-ngrok http --domain amoeba-glorious-polecat.ngrok-free.app 5043
+ngrok http --domain=premium-globally-gecko.ngrok-free.app 5043
